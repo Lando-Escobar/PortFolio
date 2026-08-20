@@ -111,6 +111,28 @@ nav{
   border-bottom:1px solid transparent;
   transition:padding .4s var(--ease),border-color .4s,background-color .45s;
 }
+.photo-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #e3a857;
+  mix-blend-mode: darken; /* garde les détails de la photo */
+  pointer-events: none;
+  opacity: 0.53;
+}
+
+/* l'image doit être en dessous */
+.photo-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 nav.scrolled{padding-top:0.75rem;padding-bottom:0.75rem;border-color:var(--line)}
 .logo{font-family:var(--mono);font-size:.9rem;letter-spacing:-0.02em;color:var(--text)}
 .logo b{color:var(--accent);font-weight:500}
